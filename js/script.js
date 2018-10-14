@@ -3,7 +3,12 @@
 
 (function task1(){
 
-	let str = "содасодасодасодасодасодасодасодасода";
+	let str = "";
+
+	do{
+		str+="сода";
+	}
+	while(str.length<17)
 
 	console.log(str);
 
@@ -32,16 +37,10 @@
 
 	let str = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.";
 	let counter = 0;
-	let k = 0;
-	let ind;
 
 	for (let i = 0; i<str.length; i++){
 
-		ind = str.indexOf("o",k);
-
-		if(ind>-1){
-
-			k=ind+1;
+		if(str[i]==="o"){
 			counter++;
 		}
 	}
@@ -56,7 +55,7 @@
 
 (function task3(){
 
-	console.group("20 випадкових чисел від 50 до 100:");
+	console.groupCollapsed("20 випадкових чисел від 50 до 100:");
 
 	for(let i = 0; i<20; i++){
 
@@ -82,10 +81,28 @@
 	console.log(nameReverse(name));
 
 	function nameReverse(str){
-		return str.split("").reverse().join("");
+		
+		let res = '';
+
+		for(let i = str.length-1; i>=0;i--){
+
+			res+=str[i];
+
+		}
+		
+		return res;
 	}
 
 })();
+
+// let name = "Наталія";
+
+// 	console.log(nameReverse(name));
+
+// 	function nameReverse(str){
+// 		return str.split("").reverse().join("");
+// 	}
+
 
 // Дано функцію, яка "з сервера" присилає дані про випадкового користувача:
 // let name, age;
